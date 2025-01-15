@@ -1,0 +1,14 @@
+{
+    "appId": "com.portal.app",
+    "files": ["dist-electron", "dist-app"],
+    "mac": {
+        "target": "dmg"
+    },
+    "linux": {
+        "target": "AppImage",
+        "category": "Utility"
+    },
+    "win": {
+        "target": ["portable", "msi"]
+    }
+}
