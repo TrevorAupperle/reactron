@@ -22,6 +22,7 @@ This project integrates several modern web technologies:
   - Static typing for both Electron and React code
   - Better IDE support and code intelligence
   - Improved maintainability and scalability
+  - Type-safe IPC communication between main and renderer processes
 
 ### How They Work Together
 
@@ -92,3 +93,23 @@ The production build process:
 The application uses environment detection to:
 - Load from `localhost:3000` in development
 - Load from built files in production
+
+### IPC Communication
+
+The template includes a robust IPC (Inter-Process Communication) system with full TypeScript support:
+
+1. **Type Safety**:
+   - Centralized event payload type definitions
+   - Type-safe IPC event handling in both main and renderer processes
+   - Automatic payload type inference
+
+2. **Utility Functions**:
+   - `ipcMainHandle`: Register type-safe event handlers in the main process
+   - `ipcMainOn`: Listen for events in the main process
+   - `ipcInvoke`: Invoke events from the renderer process
+   - `ipcOn`: Subscribe to events in the renderer process
+
+3. **Security**:
+   - Content Security Policy (CSP) implementation
+   - Secure preload script configuration
+   - Controlled exposure of Electron APIs

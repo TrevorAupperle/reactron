@@ -1,6 +1,7 @@
 {
     "appId": "com.portal.app",
     "files": ["dist-electron", "dist-app"],
+    "extraResources": ["dist-electron/preload.cjs", "src/assets/**"],
     "mac": {
         "target": "dmg"
     },
